@@ -28,3 +28,23 @@
   return xor
     
 };
+
+
+// https://leetcode.com/problems/two-sum/
+// two sum khud se solve kiya 
+// but submit nahi ho raha ha 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let p1 = 1
+  for(i=0;i<nums.length;i++){
+     if(nums[i]+nums[p1]==target){
+        return [i,p1]
+    }
+    p1++
+
+  }  
+};
