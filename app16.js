@@ -19,10 +19,10 @@ function bubbleSort(arr) {
     return arr
 }
 
-let array = [5, 4, 9,1, 0]
-let result = bubbleSort(array)
+let array1 = [5, 4, 9,1, 0]
+let result1 = bubbleSort(array1)
 
-console.log(result) */
+console.log(result1) */
 
 //
 
@@ -48,8 +48,29 @@ function selectionSort(a) {
     return a
 }
 
-let array = [100,70,80,90]
-let result = selectionSort(array)
+let array2 = [100,70,80,90]
+let result2 = selectionSort(array2)
 
-console.log(result)
+console.log(result2)
 
+// insertion sort
+
+
+function insertionSort(a) {
+    let n = a.length
+    for (let i = 1; i < n; i++){
+        let curr = a[i] // current element from array
+        let prev = i - 1 // prev element 
+        while (a[prev] > curr && prev >= 0) {
+            a[prev + 1] = a[prev]
+            prev--
+        }
+        a[prev+1]=curr
+    }
+    return a
+}
+
+let array3 = [5,4,3,-10,2,1,0]
+let result3 = insertionSort(array3)
+
+console.log(result3)
