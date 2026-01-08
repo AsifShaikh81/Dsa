@@ -39,3 +39,53 @@ var strStr = function(haystack, needle) {
     }
     return -1
 };
+
+//*Find the Index of the First Occurrence in a String  
+//*usinf kmp
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+//1)*Buildin lps array
+  let n = haystack.length
+  let m = needle.length
+  let lps=[0]  
+  let i =0
+  let j =1
+  while(j < m){
+    // if needla ka i ,j matches , run this condtion
+    if(needle[i]===needle[j]){
+        lps[j] = i+1
+        ++i,++j
+    }else{
+        if(i===0){
+            lps[j]=0
+            ++j
+        }else{
+            i=lps[i-1]
+        }
+    }
+  }
+
+    //2) Checking for the string
+    // reseting i and j 
+     i= j=0
+    // let j =0
+    while(i<n){
+        if(haystack[i]==needle[j]){
+            ++i,++j
+        }else {
+            if(j===0){
+                ++i
+            }else{
+            j=lps[j-1]
+            }
+        }
+        if(j===m)
+        return i-m
+    }
+ 
+  return -1
+};
