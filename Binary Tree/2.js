@@ -22,7 +22,8 @@ var preorderTraversal = function(root) {
         ans.push(curr.val) // push curr.val in ans
         curr.right &&stack.push(curr.right) // push right elem to stack only if curr.right exist
         curr.left &&stack.push(curr.left) // push left element to stack  only if curr.left exist
-
+        
+        //*pushing right first ans left second becz stack follows LIFO method
 
     }
     return ans
