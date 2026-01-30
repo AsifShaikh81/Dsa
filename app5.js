@@ -5,9 +5,10 @@ var isPalindrome = function(x) {
     let rev = 0
     xCopy = x
     while(x>0){
-       let rem = x%10 
+       let rem = x%10 // -> 123%10 -> gives last digit ->3
+        //0 = 10*0 + 3 =>3
         rev = (10*rev) + rem
-        x = Math.floor(x/10)
+        x = Math.floor(x/10) // 123/10 gives 12.3 ,so Math.floor removes digit after point and gives 12
     }
     if(rev === xCopy){
     return true
@@ -18,7 +19,7 @@ var isPalindrome = function(x) {
 
 
 /* why math.floor ?
-kyu ki js mein divide karne ke baad value point mein ata hai so to remove that digit after point using math.floot
+kyu ki js mein divide karne ke baad value point mein ata hai so to remove that digit after point using math.floor
 
 why xCopy?
 we modiying the actual value (121 = 121 ->12.1 )  */
