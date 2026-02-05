@@ -45,3 +45,5 @@ var hasPathSum = function(root, targetSum) {
     return leftnode || rightnode
     
 };
+
+fix
