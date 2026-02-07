@@ -37,9 +37,10 @@ var findMaxConsecutiveOnes = function(nums) {
         }else {
          //dono mein se jo bada/max hoga usko 'maxcount' mein store kar lega
            maxcount = Math.max(count , maxcount) 
-           count = 0
+           count = 0 // reset count
            }
     }
     // dono mein se jo max/bada hai usko return kardo
+    // return karte waqt max condition isiliye lagaya kyu ki loop se bahar agaya 
     return Math.max(maxcount,count)
 };
