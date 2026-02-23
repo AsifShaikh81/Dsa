@@ -1,6 +1,6 @@
 //Inserting a node in Heap
 
-// creating minHeap
+//creating minHeap
 class MinHeap{
     constructor(){
         this.heap =[] // initializing heap with empty array
