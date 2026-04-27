@@ -31,7 +31,7 @@ var twoSum = function(arr, target) {
         map[arr[i]] = i
 
     }
-
+   
     for (let i = 0 ; i<n ; i++){
         // after subt storing diff in pairtofind var
         let pairToFind = target - arr[i]
