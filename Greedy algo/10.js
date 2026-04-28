@@ -36,3 +36,39 @@ var candy = function(ratings) {
     return ans
 
 };
+
+//* approach 1  - 1 loop
+/**
+ * @param {number[]} ratings
+ * @return {number}
+ */
+var candy = function(arr) {
+  let n = arr.length
+  let ans = n // store the final ans
+  let i = 1 
+  while(i<n){
+    // same
+    if(arr[i]==arr[i-1]){
+        ++i
+        continue
+    }
+    // increasing
+    let up =0
+    while(i<n&& arr[i]>arr[i-1]){
+        ++up
+        ans = ans + up
+        ++i
+    }
+    //decreasing
+    let down =0
+     while(i<n&& arr[i]<arr[i-1]){
+        ++down
+        ans = ans + down
+        ++i
+    }
+    //remove lesser value at peak ans keep greater value
+    ans = ans - Math.min(up,down)
+
+  } 
+  return ans
+};
